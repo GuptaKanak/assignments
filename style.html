@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>guess the number</title>
+	<script>
+        function newDel() {
+          var zipVal = document.getElementById('zipcode').value;
+          if(zipVal == ""){
+              alert("Please provide a zip code.");
+              return false;
+          } else {
+              //Now call your zipCalc() function:
+              //alert("zip code.")
+              zipCalc(zipVal);
+          }
+        }
+    
+        function zipCalc(zip) {
+        	var number=Math.floor((Math.random() * 100) + 1)
+          if (zip ==number ) {
+              //alert("Right");
+              document.getElementById("myText").innerHTML = number;
+          }else {
+              //Now call your zipCalc() function:
+              //alert("wrong guess")
+              //document.getElementById("myText").innerHTML = ("\n");
+             
+              document.getElementById("myText").innerHTML += "wrong guess" +number+"<br>";
+          }
+        }
+    </script>
+</head>
+<body>
+	
+    	Guess the number between 1 to 100:<br>
+    	<input type="number" name="zipcode" id="zipcode"><br>
+    	<input type="submit" onClick="newDel()" value="Submit">
+    <h1>"The value for number is: " <span id="myText"></span></h1>
+
+</body>
+</html>
